@@ -20,8 +20,8 @@ pipeline {
                 sh "echo \$DOCKERHUB_CREDENTIALS_PSW | docker login -u \$DOCKERHUB_CREDENTIALS_USR --password-stdin"
                 sh 'docker tag trio-task-mysql:5.7 npeero/mytriotasksql1:latest'
                 sh 'docker tag trio-task-flask-app npeero/mytriotaskflask1:latest'
-                sh 'docker push trio-task-mysql:5.7 npeero/mytriotasksql1:latest'
-                sh 'docker push trio-task-flask-app npeero/mytriotaskflask1:latest'
+                sh 'docker push npeero/mytriotasksql1:latest'
+                sh 'docker push npeero/mytriotaskflask1:latest'
             }
         }
     }
